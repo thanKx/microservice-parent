@@ -19,6 +19,11 @@ public class HelloController {
     private String message;
     @GetMapping("hello")
     public String hello() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return "你好呀," + message;
     }
 
