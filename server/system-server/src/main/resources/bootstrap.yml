@@ -6,3 +6,14 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yaml
+        shared-configs:
+          - data-id: db.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+
+seata:
+  registry:
+    type: nacos
+  tx-service-group: system-tx-group
+  service:
+    vgroup-mapping:
+      system-tx-group: default

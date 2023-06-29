@@ -1,5 +1,6 @@
 package org.xieq.seckill;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -10,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableFeignClients(basePackages = "org.xieq.system.api")
+@MapperScan("org.xieq.seckill.mapper")
 public class SeckillApplication {
     public static void main(String[] args) {
         SpringApplication.run(SeckillApplication.class, args);
