@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: bpm
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        shared-configs:
+          - data-id: db.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+camunda:
+  bpm:
+    admin-user:
+      id: demo
+      password: demo
+    history-level: full
+    authorization:
+      enabled: true
